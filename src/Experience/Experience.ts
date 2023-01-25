@@ -1,8 +1,12 @@
+import Debug from "./Utils/Debug"
+
 export default class Experience {
-   private canvas: HTMLCanvasElement
+   canvas: HTMLCanvasElement
+   debug: Debug
+   
 
    constructor(canvas: HTMLCanvasElement){
       this.canvas = canvas
-      
+      this.debug = new Debug()
    }
 }
