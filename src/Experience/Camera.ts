@@ -9,7 +9,7 @@ export default class Camera {
    private scene: THREE.Scene
    private canvas: HTMLCanvasElement
    private controls: OrbitControls
-   private instance: THREE.PerspectiveCamera
+   public instance: THREE.PerspectiveCamera
 
    constructor(experience: Experience){
       this.experience = experience
