@@ -22,6 +22,7 @@ export default class Camera {
          0.1,
          100
       )
+      this.instance.position.set(0.25, -0.25, 1)
       this.scene.add(this.instance)
       this.controls = new OrbitControls(this.instance, this.canvas)
       this.controls.enableDamping = true
@@ -30,5 +31,9 @@ export default class Camera {
    resize(){
       this.instance.aspect = this.sizes.width / this.sizes.height
       this.instance.updateProjectionMatrix()
+   }
+
+   update(){
+      this.controls.update()
    }
 }
