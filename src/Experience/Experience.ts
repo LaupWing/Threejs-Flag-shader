@@ -4,6 +4,7 @@ import Sizes from "./Utils/Sizes"
 import Camera from "./Camera"
 import Renderer from "./Renderer"
 import Time from "./Utils/Time"
+import Flag from "./Flag/Flag"
 
 export default class Experience {
    public canvas: HTMLCanvasElement
@@ -13,6 +14,7 @@ export default class Experience {
    public renderer: Renderer
    public camera: Camera
    public time: Time
+   public flag: Flag
 
    constructor(canvas: HTMLCanvasElement){
       this.canvas = canvas
@@ -22,6 +24,7 @@ export default class Experience {
       this.scene = new THREE.Scene()
       this.camera = new Camera(this)
       this.renderer = new Renderer(this)
+      this.flag = new Flag(this)
 
       this.sizes.on("resize", () => {
          this.resize()
