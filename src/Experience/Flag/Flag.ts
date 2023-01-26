@@ -3,6 +3,7 @@ import Experience from "../Experience"
 
 export default class Flag {
    private geometry: THREE.PlaneGeometry 
+   private material: THREE.RawShaderMaterial
 
    constructor(experience: Experience){
       
