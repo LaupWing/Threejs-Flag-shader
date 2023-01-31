@@ -12,8 +12,7 @@ export default class Flag {
       this.geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
       this.material = new THREE.RawShaderMaterial({
          fragmentShader,
-         vertexShader,
-         wireframe: true
+         vertexShader
       })
       const mesh = new THREE.Mesh(this.geometry, this.material)
       experience.scene.add(mesh)
