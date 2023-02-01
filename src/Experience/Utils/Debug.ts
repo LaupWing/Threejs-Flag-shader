@@ -1,7 +1,7 @@
 import * as dat from "lil-gui"
 
 export default class Debug {
-   private active: boolean
+   public active: boolean
    ui?: dat.GUI
 
    constructor() {
