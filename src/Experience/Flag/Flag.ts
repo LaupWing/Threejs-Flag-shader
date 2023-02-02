@@ -4,7 +4,7 @@ import vertexShader from "./shaders/vertex.glsl"
 import fragmentShader from "./shaders/fragment.glsl"
 import Debug from "../Utils/Debug"
 import Time from "../Utils/Time"
-import Texture from "./Texture"
+import imgUrl from "./image.png"
 
 export default class Flag {
    private geometry: THREE.PlaneGeometry 
@@ -12,13 +12,13 @@ export default class Flag {
    private debug: Debug
    private time: Time
    private mesh: THREE.Mesh
-   private texture: Texture
 
    constructor(experience: Experience){
       this.debug = experience.debug
       this.time = experience.time
       this.geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
-      this.texture = new Texture()
+      const textureLoader = new THREE.TextureLoader() 
+      const flagTexture = textureLoader.load(imgUrl)
       this.material = new THREE.RawShaderMaterial({
          fragmentShader,
          vertexShader,
@@ -33,7 +33,7 @@ export default class Flag {
                value: new THREE.Color("orange")
             },
             uTexture:{
-               value: this.texture
+               value: flagTexture
             }
          }
       })
