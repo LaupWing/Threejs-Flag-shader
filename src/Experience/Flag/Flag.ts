@@ -10,6 +10,7 @@ export default class Flag {
    private material: THREE.RawShaderMaterial
    private debug: Debug
    private time: Time
+   private mesh: THREE.Mesh
 
    constructor(experience: Experience){
       this.debug = experience.debug
@@ -28,7 +29,7 @@ export default class Flag {
          }
       })
 
-      const mesh = new THREE.Mesh(this.geometry, this.material)
+      this.mesh = new THREE.Mesh(this.geometry, this.material)
       const count = this.geometry.attributes.position.count
       const randoms = new Float32Array(count)
       for (let i = 0; i < count; i ++){
@@ -36,7 +37,7 @@ export default class Flag {
       }
 
       this.geometry.setAttribute("aRandom", new THREE.BufferAttribute(randoms, 1))
-      experience.scene.add(mesh)
+      experience.scene.add(this.mesh)
       this.setDebug()
    }
 
