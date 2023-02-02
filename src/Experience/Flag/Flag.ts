@@ -25,11 +25,15 @@ export default class Flag {
             },
             uTime: {
                value: 0
+            },
+            uColor: {
+               value: new THREE.Color("orange")
             }
          }
       })
 
       this.mesh = new THREE.Mesh(this.geometry, this.material)
+      this.mesh.scale.y = 2 / 3
       const count = this.geometry.attributes.position.count
       const randoms = new Float32Array(count)
       for (let i = 0; i < count; i ++){
