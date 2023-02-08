@@ -8,7 +8,7 @@ import imgUrl from "./image.png"
 
 export default class Flag {
    private geometry: THREE.PlaneGeometry 
-   private material: THREE.RawShaderMaterial
+   private material: THREE.ShaderMaterial
    private debug: Debug
    private time: Time
    private mesh: THREE.Mesh
@@ -19,7 +19,7 @@ export default class Flag {
       this.geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
       const textureLoader = new THREE.TextureLoader() 
       const flagTexture = textureLoader.load(imgUrl)
-      this.material = new THREE.RawShaderMaterial({
+      this.material = new THREE.ShaderMaterial({
          fragmentShader,
          vertexShader,
          uniforms: {
