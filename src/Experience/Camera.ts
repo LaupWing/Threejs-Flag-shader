@@ -1,7 +1,7 @@
 import Experience from "./Experience"
 import Sizes from "./Utils/Sizes"
 import * as THREE from "three"
-import {OrbitControls} from "three/examples/jsm/controls/OrbitControls"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
 export default class Camera {
    private experience: Experience
