@@ -21,7 +21,6 @@ export default class Renderer {
          canvas: this.canvas,
          antialias: true
       })
-      this.instance.setClearColor("black")
       this.instance.setSize(this.sizes.width, this.sizes.height)
       this.instance.setPixelRatio(Math.min(window.devicePixelRatio, 2))
    }
